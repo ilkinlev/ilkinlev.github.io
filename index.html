@@ -5,8 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ilkin Hajiyev - Frontend Developer</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>"
+    />
   </head>
   <body>
+    <!-- Settings buttons -->
+    <div class="settings-buttons">
+      <button
+        class="settings-btn"
+        id="theme-toggle"
+        onclick="toggleTheme()"
+        title="Dark Mode"
+      >
+        <span id="theme-icon">🌙</span>
+      </button>
+      <button
+        class="settings-btn"
+        id="lang-toggle"
+        onclick="toggleLanguage()"
+        title="Dili Dəyiş"
+      >
+        <span id="lang-text">AZ</span>
+      </button>
+    </div>
+
     <div class="bg-shapes">
       <div class="shape"></div>
       <div class="shape"></div>
@@ -38,11 +62,6 @@
           <div class="nav-btn-icon">🚀</div>
           <div class="nav-btn-title">Projects</div>
         </button>
-
-        <!-- <button class="nav-btn" onclick="openModal('blog')">
-          <div class="nav-btn-icon">✍️</div>
-          <div class="nav-btn-title">Blog</div>
-        </button> -->
 
         <button class="nav-btn" onclick="openModal('contact')">
           <div class="nav-btn-icon">📧</div>
@@ -198,35 +217,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Blog Modal
-    <div class="modal" id="blog-modal">
-      <div class="modal-content">
-        <button class="modal-close" onclick="closeModal('blog')">×</button>
-        <h2 class="modal-title">Blog</h2>
-        <div class="modal-body">
-          <p style="color: #94a3b8; text-align: center; padding: 40px 0">
-            Blog posts coming soon! Stay tuned for articles about web
-            development, programming tips, and my learning journey.
-          </p>
-
-          <div class="project-card">
-            <h4>Getting Started with TypeScript</h4>
-            <p style="color: #94a3b8; font-style: italic">Coming soon...</p>
-          </div>
-
-          <div class="project-card">
-            <h4>Building Modern Web Applications</h4>
-            <p style="color: #94a3b8; font-style: italic">Coming soon...</p>
-          </div>
-
-          <div class="project-card">
-            <h4>My Journey as a Developer</h4>
-            <p style="color: #94a3b8; font-style: italic">Coming soon...</p>
-          </div>
-        </div>
-      </div>
-    </div> -->
 
     <!-- Contact Modal -->
     <div class="modal" id="contact-modal">
