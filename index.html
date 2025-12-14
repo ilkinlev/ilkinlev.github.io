@@ -1,76 +1,270 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-  
-    <!-- Gərəkli meta teqləri -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> 
-	
-	<!-- Title -->
-	<title>Hendra Ana Səhifə</title>
-	
-	<!-- Title Icon -->
-	<link rel="icon" href="assets/images/icon.ico" type="image/gif" sizes="16x16">
-	
-	<!-- CSS -->
-	<link rel="stylesheet" href="assets/style/style.css">
-	
-	<!-- jQuery və Bootstrap kitabxanaları  -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E</script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ilkin Hajiyev - Frontend Developer</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="position-relative d-flex min-vh-100">
-	
-		<div class="container">
-			<div class="row">
-				<div class="col">
-				</div>
-			</div>			
-			<div class="row">
-				<div class="col text-center">
-				<ul class="nav nav-pills nav-fill navbar-light">
-					  <li class="nav-item">
-						<a class="nav-link active" href="index.html">Ana Sehife</a>
-					  </li>
-					  <li class="nav-item">
-						<a class="nav-link" href="pages/Kollec_haqqinda.html">Kollec haqqında</a>
-					  </li>
-					  <li class="nav-item">
-						<a class="nav-link" href="pages/Emeliyyat_sistemleri.html">Əməliyyat sistemləri</a>
-					  </li>
-					  <li class="nav-item">
-						<a class="nav-link" href="pages/Komputer_arxitekturasi.html">Kompüter arxitekturası</a>
-					  </li>
-						<a class="nav-link" href="pages/İnformasiya_texnologiyasi.html">İnformasiya texnologiyası</a>
-					  <li class="nav-item">
-						<a class="nav-link" href="pages/Tarix.html">Tarix</a>
-					  </li>
-					  <li class="nav-item">
-						<a class="nav-link" href="https://www.facebook.com/OdlarYurduUniv%22%3EFacebook">Facebook</a>
-					  </li>
-					  <li class="nav-item">
-						<a class="nav-link" href="https://www.youtube.com/user/OYUeduaz%22%3EYouTube">YouTube</a>
-					  </li>
-					</ul>
-				</div>
-			</div>
-			<div class="row align-items-center justify-content-center h-75">
-				<div class="col text-center">
-					<h1 class="display-1">Hendra</h1>
-					<p class="lead">
-						Creating new games needs creativity
-					</p>
-				</div>
-			</div>
-		</div>
-		<!-- Footer -->
-		<footer class="page-footer font-small text-center align-items-center justify-content-center fixed-bottom">
-			<p class="lead">Made by İlkin Haciyev</p>
-		</footer>
-		<!-- Footer -->
+  <body>
+    <div class="bg-shapes">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
 
-	</body>
+    <div class="container">
+      <div class="hero">
+        <h1>Ilkin Hajiyev</h1>
+        <p>Frontend Developer</p>
+        <p class="tagline">
+          Building web experiences with passion and precision. Based in Baku,
+          Azerbaijan.
+        </p>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="nav-btn" onclick="openModal('about')">
+          <div class="nav-btn-icon">👋</div>
+          <div class="nav-btn-title">About</div>
+        </button>
+
+        <button class="nav-btn" onclick="openModal('experience')">
+          <div class="nav-btn-icon">💼</div>
+          <div class="nav-btn-title">Experience</div>
+        </button>
+
+        <button class="nav-btn" onclick="openModal('projects')">
+          <div class="nav-btn-icon">🚀</div>
+          <div class="nav-btn-title">Projects</div>
+        </button>
+
+        <!-- <button class="nav-btn" onclick="openModal('blog')">
+          <div class="nav-btn-icon">✍️</div>
+          <div class="nav-btn-title">Blog</div>
+        </button> -->
+
+        <button class="nav-btn" onclick="openModal('contact')">
+          <div class="nav-btn-icon">📧</div>
+          <div class="nav-btn-title">Contact</div>
+        </button>
+      </div>
+    </div>
+
+    <!-- About Modal -->
+    <div class="modal" id="about-modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('about')">×</button>
+        <h2 class="modal-title">About Me</h2>
+        <div class="modal-body">
+          <p>
+            Hi! I'm Ilkin Hajiyev, a passionate Frontend developer based in
+            Baku, Azerbaijan. I love building websites and exploring new
+            technologies.
+          </p>
+
+          <h3>What I Do</h3>
+          <p>
+            I specialize in frontend development, crafting beautiful and
+            interactive user interfaces. I focus on creating responsive,
+            accessible, and performant web applications using modern
+            technologies like HTML, CSS, JavaScript, and frameworks such as
+            React and TypeScript.
+          </p>
+
+          <h3>Skills</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML/CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Git</span>
+          </div>
+
+          <p>
+            When I'm not coding, I enjoy learning about new technologies,
+            contributing to open-source projects, and sharing my knowledge with
+            the developer community.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience Modal -->
+    <div class="modal" id="experience-modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('experience')">
+          ×
+        </button>
+        <h2 class="modal-title">Experience</h2>
+        <div class="modal-body">
+          <h3>Education</h3>
+          <p>
+            <strong>Odlar Yurdu Colleague</strong><br />
+            Computer Systems Maintenance and Service<br />
+            2020 - 2024
+          </p>
+
+          <h3>Technical Skills</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Frontend Development</span>
+            <span class="skill-tag">Backend Development</span>
+            <span class="skill-tag">Database Design</span>
+            <span class="skill-tag">API Development</span>
+            <span class="skill-tag">Version Control</span>
+          </div>
+
+          <h3>Work Experience</h3>
+          <p>
+            <strong>Customer Service Representative</strong> - Positive Call
+            Center Solutions<br />
+            Aug 2025 - Dec 2025 · 5 mos<br />
+          </p>
+
+          <p style="margin-top: 30px; text-align: center">
+            <a href="#" class="project-link" style="font-size: 1.1rem"
+              >📄 Download Full CV</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Modal -->
+    <div class="modal" id="projects-modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('projects')">×</button>
+        <h2 class="modal-title">Projects</h2>
+        <div class="modal-body">
+          <div class="project-card">
+            <h4>Personal Portfolio Website</h4>
+            <p>
+              A modern, responsive portfolio website built with HTML, CSS, and
+              JavaScript featuring smooth animations and modal interactions.
+            </p>
+            <a
+              href="https://github.com/ilkinlev/ilkinlev.github.io"
+              target="_blank"
+              class="project-link"
+              >View on GitHub →</a
+            >
+          </div>
+
+          <div class="project-card">
+            <h4>Python Homework Projects</h4>
+            <p>
+              Collection of Python programming exercises and projects
+              demonstrating problem-solving skills and code organization.
+            </p>
+            <a
+              href="https://github.com/ilkinlev/PythonHomeWork"
+              target="_blank"
+              class="project-link"
+              >View on GitHub →</a
+            >
+          </div>
+
+          <div class="project-card">
+            <h4>Console Game</h4>
+            <p>
+              An interactive console-based game built with TypeScript,
+              showcasing game logic and TypeScript fundamentals.
+            </p>
+            <a
+              href="https://github.com/ilkinlev/ConsoleGame"
+              target="_blank"
+              class="project-link"
+              >View on GitHub →</a
+            >
+          </div>
+
+          <div class="project-card">
+            <h4>YouTube to MP3 Converter</h4>
+            <p>
+              Frontend application for converting YouTube videos to MP3 format,
+              built with TypeScript and modern web technologies.
+            </p>
+            <a
+              href="https://github.com/ilkinlev/YTMP3-Front"
+              target="_blank"
+              class="project-link"
+              >View on GitHub →</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Modal
+    <div class="modal" id="blog-modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('blog')">×</button>
+        <h2 class="modal-title">Blog</h2>
+        <div class="modal-body">
+          <p style="color: #94a3b8; text-align: center; padding: 40px 0">
+            Blog posts coming soon! Stay tuned for articles about web
+            development, programming tips, and my learning journey.
+          </p>
+
+          <div class="project-card">
+            <h4>Getting Started with TypeScript</h4>
+            <p style="color: #94a3b8; font-style: italic">Coming soon...</p>
+          </div>
+
+          <div class="project-card">
+            <h4>Building Modern Web Applications</h4>
+            <p style="color: #94a3b8; font-style: italic">Coming soon...</p>
+          </div>
+
+          <div class="project-card">
+            <h4>My Journey as a Developer</h4>
+            <p style="color: #94a3b8; font-style: italic">Coming soon...</p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Contact Modal -->
+    <div class="modal" id="contact-modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('contact')">×</button>
+        <h2 class="modal-title">Get In Touch</h2>
+        <div class="modal-body">
+          <p>
+            I'm always open to new opportunities, collaborations, or just a
+            friendly chat about technology. Feel free to reach out!
+          </p>
+
+          <div class="contact-info">
+            <div class="contact-item">
+              <span>📧</span>
+              <a href="mailto:arcrutus007@gmail.com">Mail Me!</a>
+            </div>
+
+            <div class="contact-item">
+              <span>💼</span>
+              <a href="https://www.linkedin.com/in/ilkinlev/" target="_blank"
+                >LinkedIn Profile</a
+              >
+            </div>
+
+            <div class="contact-item">
+              <span>💻</span>
+              <a href="https://github.com/ilkinlev" target="_blank"
+                >GitHub Profile</a
+              >
+            </div>
+
+            <div class="contact-item">
+              <span>📍</span>
+              <span>Baku, Azerbaijan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
