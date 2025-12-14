@@ -1,7 +1,9 @@
 // Language translations
 const translations = {
   en: {
-    title: "Frontend Developer",
+    h1: "Ilkin Hajiyev",
+    hTitle: "Frontend Developer",
+    title: "Ilkin Hajiyev - Frontend Developer",
     tagline:
       "Building web experiences with passion and precision. Based in Baku, Azerbaijan.",
     aboutBtn: "About",
@@ -10,7 +12,7 @@ const translations = {
     contactBtn: "Contact",
     aboutTitle: "About Me",
     aboutText1:
-      "Hi! I'm Ilkin Hajiyev, a passionate Frontend developer based in Baku, Azerbaijan. I love building websites and exploring new technologies.",
+      "Hi! I'm Ilkin Hajiyev, a passionate Frontend developer. I love building websites and exploring new technologies.",
     aboutSubtitle1: "What I Do",
     aboutText2:
       "I specialize in frontend development, crafting beautiful and interactive user interfaces. I focus on creating responsive, accessible, and performant web applications using modern technologies like HTML, CSS, JavaScript, and frameworks such as React and TypeScript.",
@@ -38,15 +40,17 @@ const translations = {
     location: "Baku, Azerbaijan",
   },
   az: {
-    title: "Frontend Developer",
-    tagline: "Istifadəçi dostu və müasir veb təcrübələr yaradıram.",
+    h1: "Ilkin Hacıyev",
+    hTitle: "Frontend Developer",
+    title: "Ilkin Hacıyev - Frontend Developer",
+    tagline: "Istifadəçi dostu və müasir web təcrübələr yaradıram.",
     aboutBtn: "Haqqımda",
     experienceBtn: "Təcrübə",
     projectsBtn: "Layihələr",
     contactBtn: "Əlaqə",
     aboutTitle: "Haqqımda",
     aboutText1:
-      "Salam! Mən İlkin Hacıyev, Frontend tərtibatçısıyam. Veb saytlar yaratmağı və yeni texnologiyaları öyrənməyi sevirəm.",
+      "Salam! Mən İlkin Hacıyev, Frontend tərtibatçısıyam. Web saytlar yaratmağı və yeni texnologiyaları öyrənməyi sevirəm.",
     aboutSubtitle1: "Nə Edirəm",
     aboutText2:
       "Gözəl və interaktiv istifadəçi interfeyslərini yaratmaqla frontend development üzrə ixtisaslaşıram. HTML, CSS, JavaScript və React və TypeScript kimi freymvorklar istifadə edərək responsiv, əlçatan və performanslı veb tətbiqlər yaradıram.",
@@ -87,8 +91,21 @@ function openModal(id) {
 // Close modal function
 function closeModal(id) {
   const modal = document.getElementById(`${id}-modal`);
-  modal.classList.remove("active");
-  document.body.style.overflow = "auto";
+  const modalContent = modal.querySelector(".modal-content");
+
+  // Add close animation
+  modalContent.classList.add("closing");
+
+  // After animation close modal
+  modalContent.addEventListener(
+    "animationend",
+    () => {
+      modal.classList.remove("active");
+      modalContent.classList.remove("closing");
+      document.body.style.overflow = "auto";
+    },
+    { once: true } // Listen just once
+  );
 }
 
 // Toggle dark mode
@@ -120,6 +137,9 @@ function updateLanguage() {
   // Hero section
   document.querySelector(".hero p").textContent = t.title;
   document.querySelector(".hero .tagline").textContent = t.tagline;
+  document.querySelector(".hero h1").textContent = t.h1;
+  document.querySelector(".hero .hTitle").textContent = t.hTitle;
+  document.title = t.title;
 
   // Navigation buttons
   const navButtons = document.querySelectorAll(".nav-btn-title");
@@ -203,18 +223,40 @@ window.addEventListener("DOMContentLoaded", () => {
 document.querySelectorAll(".modal").forEach((modal) => {
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
-      modal.classList.remove("active");
-      document.body.style.overflow = "auto";
+      // Boşluğa tıklandıysa
+      const modalContent = modal.querySelector(".modal-content");
+      modalContent.classList.add("closing");
+
+      modalContent.addEventListener(
+        "animationend",
+        () => {
+          modal.classList.remove("active");
+          modalContent.classList.remove("closing");
+          document.body.style.overflow = "auto";
+        },
+        { once: true }
+      );
     }
   });
 });
 
 // Close modal with Escape key
+// Close modal with Escape key
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     document.querySelectorAll(".modal.active").forEach((modal) => {
-      modal.classList.remove("active");
-      document.body.style.overflow = "auto";
+      const modalContent = modal.querySelector(".modal-content");
+      modalContent.classList.add("closing");
+
+      modalContent.addEventListener(
+        "animationend",
+        () => {
+          modal.classList.remove("active");
+          modalContent.classList.remove("closing");
+          document.body.style.overflow = "auto";
+        },
+        { once: true }
+      );
     });
   }
 });
